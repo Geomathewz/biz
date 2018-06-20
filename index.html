@@ -765,7 +765,7 @@
           <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p> -->
         </div>
 		<!--    [ START MAP AREA]-->
-            <!-- <div class="map-area" id="map"></div> -->
+            <div class="map-area" id="map"></div>
 		<!--    [FINISH MAP AREA]-->
 		
         <div class="row contact-info">
@@ -903,7 +903,22 @@
   </footer><!-- #footer -->
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
+<script>
+		 function initMap() {
+			 var uluru = {lat: 8.1726394, lng: 77.4197199};
+			 var map = new google.maps.Map(document.getElementById('map'), {
+				 zoom: 15,
+				 center: uluru
+			 });
+			 var marker = new google.maps.Marker({
+				 position: uluru,
+				 map: map
+			 });
+		 }
+	 </script>
+	 <script async defer
+	 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCreLygTIYKNL2kGUlxcw-aq9UsuOv4c3E&callback=initMap">
+	 </script>
   <!-- JavaScript Libraries -->
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script> -->
   <script src="lib/jquery/jquery.min.js"></script>
