@@ -14,10 +14,12 @@ try {
     ) {
         echo "Please fill out the all fields";
     } else {
-		print_r($_POST);exit();
+		// print_r($_POST);exit();
         require_once "../Mail.php";
-        $from = '<premieredentalstudios@gmail.com>';
-        $to = '<geomathew1992@gmail.com>';
+        // $from = '<>';
+        $from = $_POST['email'];
+        // $to = '<raj@zivedesigns.com>';
+        $to = '<georgebabu92@gmail.com>';
         $subject = "Message from ".$_POST['name'];
         $body = "Hi,\n\n".  "Name: ".$_POST['name']."\n".
                             "subject: ". $_POST['subject']."\n".
@@ -34,8 +36,8 @@ try {
             'host' => 'ssl://smtp.gmail.com',
             'port' => '465',
             'auth' => true,
-            'username' => 'premieredentalstudios@gmail.com',
-            'password' => 'Fuzelab@123'
+            'username' => 'infozivedesigns@gmail.com',
+            'password' => 'Zive@123'
         ));
 
         $mail = $smtp->send($to, $headers, $body);
